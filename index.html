@@ -39,7 +39,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
 <div class="hero">
 <h1>India's Cheapest SMM Panel 🇮🇳</h1>
 <p>Instagram Followers, Likes, YouTube Views, Telegram Members - Sab Kuch Ek Jagah</p>
-<a class="btn" href="#order">Abhi Order Karo</a>
+<a class="btn" href="https://wa.me/919580070096?text=Hi%20D2N%20Panel!%20Mujhe%20Order%20Karna%20Hai">Abhi Order Karo</a>
 <p style="margin-top:15px;font-size:13px">Starting Price Sirf ₹5 se | Instant Delivery</p>
 </div>
 
@@ -77,12 +77,18 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
 
 <script>
 function placeOrder(){
+function placeOrder(){
 let s=document.getElementById('service').value;
+let l=document.getElementById('link').value;
+let q=document.getElementById('qty').value;
+let msg="Hi D2N Panel! Mujhe Order Karna Hai%0A%0AService: "+s+"%0ALink: "+l+"%0AQuantity: "+q;
+window.open("https://wa.me/919580070096?text="+msg, "_blank");
+}
 let l=document.getElementById('link').value;
 let q=document.getElementById('qty').value;
 if(l==""){alert("Pehle Link / Username Dalo");return;}
 document.getElementById('msg').innerText="✅ Order Received! Service: "+s+" | Qty: "+q+" | Link: "+l;
 }
-</script>
-</body>
+</script><a href="https://wa.me/919580070096?text=Hi%20D2N%20Panel!%20Mujhe%20Order%20Karna%20Hai" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;z-index:999">WhatsApp Order 💬</a>
+
 </html>
