@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D2N SMM Panel - Sabse Sasta SMM Panel</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;color:#fff}
+header{background:#1e293b;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:bold;color:#22c55e}
+.logo span{color:#fff}
+nav a{color:#fff;text-decoration:none;margin-left:15px;font-size:14px}
+.hero{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#16a34a,#0ea5e9)}
+.hero h1{font-size:32px;margin-bottom:10px}
+.hero p{opacity:.9;margin-bottom:20px}
+.btn{background:#fff;color:#000;padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block}
+.container{max-width:1000px;margin:auto;padding:20px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+.card{background:#1e293b;padding:20px;border-radius:12px}
+.card h3{color:#22c55e;margin-bottom:8px}
+.card p{font-size:14px;color:#cbd5e1;line-height:1.5}
+.price{font-size:24px;font-weight:bold;margin:10px 0}
+.order-box{background:#fff;color:#000;padding:20px;border-radius:12px;margin-top:20px}
+.order-box h2{margin-bottom:15px}
+input,select{width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;font-size:15px}
+.order-btn{width:100%;background:#16a34a;color:#fff;border:none;padding:14px;border-radius:8px;font-size:16px;font-weight:bold}
+footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.hero h1{font-size:26px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">D2N<span> PANEL</span></div>
+<nav><a href="#">Home</a><a href="#services">Services</a><a href="#order">Order</a></nav>
+</header>
+
+<div class="hero">
+<h1>India's Cheapest SMM Panel 🇮🇳</h1>
+<p>Instagram Followers, Likes, YouTube Views, Telegram Members - Sab Kuch Ek Jagah</p>
+<a class="btn" href="#order">Abhi Order Karo</a>
+<p style="margin-top:15px;font-size:13px">Starting Price Sirf ₹5 se | Instant Delivery</p>
+</div>
+
+<div class="container" id="services">
+<h2>🔥 Popular Services</h2>
+<div class="cards">
+<div class="card"><h3>Instagram Followers</h3><div class="price">₹49 / 1000</div><p>High Quality, Non-Drop, 0-30 Min Start. Profile Public Honi Chahiye.</p></div>
+<div class="card"><h3>Instagram Likes</h3><div class="price">₹19 / 1000</div><p>Real Looking Likes, Instant Start, 30 Days Refill.</p></div>
+<div class="card"><h3>YouTube Views</h3><div class="price">₹99 / 1000</div><p>High Retention Views, Monetization Safe.</p></div>
+<div class="card"><h3>Telegram Members</h3><div class="price">₹89 / 1000</div><p>Real Members, Fast Delivery, No Drop.</p></div>
+<div class="card"><h3>Facebook Followers</h3><div class="price">₹59 / 1000</div><p>Page / Profile Followers, Lifetime Guarantee.</p></div>
+<div class="card"><h3>TikTok Views</h3><div class="price">₹9 / 1000</div><p>Super Fast, Viral Hone Me Help Karega.</p></div>
+</div>
+
+<div class="order-box" id="order">
+<h2>🛒 Order Now</h2>
+<label>Service Chune</label>
+<select id="service">
+<option>Instagram Followers - ₹49/1000</option>
+<option>Instagram Likes - ₹19/1000</option>
+<option>YouTube Views - ₹99/1000</option>
+<option>Telegram Members - ₹89/1000</option>
+</select>
+<label>Link / Username</label>
+<input type="text" id="link" placeholder="Ex: https://instagram.com/username">
+<label>Quantity</label>
+<input type="number" id="qty" placeholder="Ex: 1000" value="1000">
+<button class="order-btn" onclick="placeOrder()">Order Place Karo</button>
+<p id="msg" style="margin-top:12px;color:green;font-weight:bold"></p>
+<p style="font-size:13px;color:#666;margin-top:10px">Payment ke liye WhatsApp pe contact karein. Ye demo version hai.</p>
+</div>
+</div>
+
+<footer>D2N SMM Panel © 2026 | Made in India | Support: WhatsApp Available</footer>
+
+<script>
+function placeOrder(){
+let s=document.getElementById('service').value;
+let l=document.getElementById('link').value;
+let q=document.getElementById('qty').value;
+if(l==""){alert("Pehle Link / Username Dalo");return;}
+document.getElementById('msg').innerText="✅ Order Received! Service: "+s+" | Qty: "+q+" | Link: "+l;
+}
+</script>
+</body>
+</html>
