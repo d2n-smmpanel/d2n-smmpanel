@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - D2N Panel</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0f172a;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.box{background:#1e293b;width:100%;max-width:380px;padding:25px;border-radius:15px}
+h2{text-align:center;color:#22c55e;margin-bottom:5px}
+p{text-align:center;color:#94a3b8;font-size:13px;margin-bottom:20px}
+input{width:100%;padding:13px;margin-bottom:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#fff;font-size:15px}
+button{width:100%;padding:13px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold}
+.link{text-align:center;margin-top:15px;font-size:14px}
+.link a{color:#22c55e;text-decoration:none;font-weight:bold}
+.tabs{display:flex;margin-bottom:20px;background:#0f172a;border-radius:8px;padding:4px}
+.tabs div{flex:1;text-align:center;padding:10px;border-radius:6px;cursor:pointer;font-weight:bold}
+.active{background:#16a34a}
+#msg{text-align:center;margin-top:12px;font-weight:bold;font-size:14px}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>D2N PANEL</h2>
+<p>India's Cheapest SMM Panel</p>
+
+<div class="tabs">
+<div id="tabLogin" class="active" onclick="showLogin()">Login</div>
+<div id="tabSignup" onclick="showSignup()">Signup</div>
+</div>
+
+<div id="loginBox">
+<input type="text" id="l_user" placeholder="Username">
+<input type="password" id="l_pass" placeholder="Password">
+<button onclick="login()">Login Karo</button>
+</div>
+
+<div id="signupBox" style="display:none">
+<input type="text" id="s_user" placeholder="Username Banao">
+<input type="text" id="s_phone" placeholder="Mobile Number">
+<input type="password" id="s_pass" placeholder="Password Banao">
+<button onclick="signup()">Account Banao</button>
+</div>
+
+<p id="msg"></p>
+<div class="link"><a href="index.html">← Back to Home</a></div>
+</div>
+
+<script>
+function showLogin(){
+document.getElementById('loginBox').style.display='block';
+document.getElementById('signupBox').style.display='none';
+document.getElementById('tabLogin').classList.add('active');
+document.getElementById('tabSignup').classList.remove('active');
+}
+function showSignup(){
+document.getElementById('loginBox').style.display='none';
+document.getElementById('signupBox').style.display='block';
+document.getElementById('tabLogin').classList.remove('active');
+document.getElementById('tabSignup').classList.add('active');
+}
+function signup(){
+let u=document.getElementById('s_user').value;
+let p=document.getElementById('s_phone').value;
+let pass=document.getElementById('s_pass').value;
+if(u==""||pass==""){document.getElementById('msg').innerText="Sab kuch bharo!";document.getElementById('msg').style.color="red";return;}
+localStorage.setItem("d2n_user",u);
+localStorage.setItem("d2n_pass",pass);
+document.getElementById('msg').innerText="✅ Account Ban Gaya! Ab Login Karo";
+document.getElementById('msg').style.color="#22c55e";
+showLogin();
+}
+function login(){
+let u=document.getElementById('l_user').value;
+let pass=document.getElementById('l_pass').value;
+let savedU=localStorage.getItem("d2n_user");
+let savedP=localStorage.getItem("d2n_pass");
+if(u==savedU && pass==savedP && u!=""){
+localStorage.setItem("d2n_logged","yes");
+document.getElementById('msg').innerText="✅ Login Ho Gaya! Panel Khul Raha Hai...";
+document.getElementById('msg').style.color="#22c55e";
+setTimeout(()=>{window.location.href="index.html"},1000);
+}else{
+document.getElementById('msg').innerText="❌ Galat Username / Password";
+document.getElementById('msg').style.color="red";
+}
+}
+</script>
+</body>
+</html>
