@@ -53,7 +53,25 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
 <div class="card"><h3>Facebook Followers</h3><div class="price">₹59 / 1000</div><p>Page / Profile Followers, Lifetime Guarantee.</p></div>
 <div class="card"><h3>TikTok Views</h3><div class="price">₹9 / 1000</div><p>Super Fast, Viral Hone Me Help Karega.</p></div>
 </div>
-
+<section id="wallet" style="background:#fff;padding:20px;border-radius:15px;margin:20px 0;text-align:center">
+<h2>💰 Add Money</h2>
+<p>Wallet me paise add karo, fir order karo</p>
+<input id="addAmt" type="number" placeholder="Amount likho - jaise 100" style="padding:12px;width:80%;border-radius:10px;border:1px solid #ccc;font-size:16px">
+<br><br>
+<button onclick="addMoney()" style="background:#6C63FF;color:#fff;padding:14px 25px;border:none;border-radius:10px;font-weight:bold;font-size:16px;width:90%">Add Money via UPI</button>
+</section>
+<script>
+function addMoney(){
+let amt=document.getElementById('addAmt').value;
+if(!amt || amt<10){alert("Kam se kam 10 Rs likho");return;}
+let upi="upi://pay?pa=bhaidurgesh496-1@oksbi&pn=D2N%20Panel&am="+amt+"&cu=INR&tn=Wallet%20Recharge%20D2N";
+window.location.href=upi;
+setTimeout(function(){
+let msg="Hi D2N Panel! Maine Wallet Recharge Kiya Hai%0A%0AAmount: "+amt+" Rs";
+window.open("https://wa.me/919580070096?text="+msg, "_blank");
+}, 2000);
+}
+</script>
 <div class="order-box" id="order">
 <h2>🛒 Order Now</h2>
 <label>Service Chune</label>
@@ -76,7 +94,6 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
 <footer>D2N SMM Panel © 2026 | Made in India | Support: WhatsApp Available</footer>
 
 <script>
-function placeOrder(){
 function placeOrder(){
 let s=document.getElementById('service').value;
 let l=document.getElementById('link').value;
