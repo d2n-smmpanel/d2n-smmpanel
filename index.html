@@ -92,20 +92,17 @@ window.open("https://wa.me/919580070096?text="+msg, "_blank");
 </div>
 
 <footer>D2N SMM Panel © 2026 | Made in India | Support: WhatsApp Available</footer>
-
 <script>
 function placeOrder(){
 let s=document.getElementById('service').value;
 let l=document.getElementById('link').value;
 let q=document.getElementById('qty').value;
+if(l===""){alert("Pehle Link / Username Dalo");return;}
+document.getElementById('msg').innerText="✅ Order Received! Service: "+s+" | Link: "+l+" | Qty: "+q;
 let msg="Hi D2N Panel! Mujhe Order Karna Hai%0A%0AService: "+s+"%0ALink: "+l+"%0AQuantity: "+q;
 window.open("https://wa.me/919580070096?text="+msg, "_blank");
 }
-let l=document.getElementById('link').value;
-let q=document.getElementById('qty').value;
-if(l==""){alert("Pehle Link / Username Dalo");return;}
-document.getElementById('msg').innerText="✅ Order Received! Service: "+s+" | Qty: "+q+" | Link: "+l;
-}
+</script>
 </script><a href="https://wa.me/919580070096?text=Hi%20D2N%20Panel!%20Mujhe%20Order%20Karna%20Hai" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;z-index:999">WhatsApp Order 💬</a>
 
 </html>
